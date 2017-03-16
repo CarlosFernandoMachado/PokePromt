@@ -1,0 +1,14 @@
+#pragma once
+
+class pagina{
+	pagina padre;
+	nodo arreglo[3];
+public:
+	pagina(nodo);
+	void agregar(nodo,bool);
+	nodo get(int);
+	void eliminar(int);
+	pagina getpadre();
+	void setpadre(pagina);
+	string tostring();
+};

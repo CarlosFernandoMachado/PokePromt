@@ -4,20 +4,28 @@
 using std::string;
 using std::stringstream;
 
-nodo(string camino,int valor)path(camino),key(valor){}
+nodo::nodo(string camino,int valor):path(camino),key(valor){}
 
-string getpath(){
+string nodo::getpath(){
 	return path;
 }
 
-int getkey(){
+int nodo::getkey(){
 	return key;
 }
 
-nodo gethijoizq(){
-	return *hijoizq;
+pagina nodo::getizq(){
+	return izq;
 }
 
-nodo gethijoder(){
-	return *hijoder;
+pagina nodo::getder(){
+	return der;
+}
+
+void nodo::setizq(pagina nuevo){
+	izq = nuevo;
+}
+
+void nodo::setder(pagina nuevo){
+	der = nuevo;
 }
