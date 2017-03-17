@@ -11,8 +11,8 @@ public:
 	nodo(string,int);
 	string getpath();
 	int getkey();
-	pagina& getizq();
-	pagina& getder();
+	pagina getizq();
+	pagina getder();
 	void setizq(pagina);
 	void setder(pagina);
 

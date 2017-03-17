@@ -1,3 +1,5 @@
+#include "pagina.cpp"
+#include "nodos.cpp"
 #include <string>
 using std::string;
 
@@ -9,4 +11,9 @@ void arbolB::setroot(pagina newroot){
 }
 pagina arbolB::getroot(){
 	return root;
+}
+
+string arbolB::imprimir(){
+	string nodos = "";
+	return nodos;
 }

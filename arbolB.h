@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "pagina.h"
 using std::string;
 
 class arbolB{

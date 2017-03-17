@@ -1,5 +1,7 @@
 #include <iostream>
 #include "nodo.h"
+#include "pagina.h"
+#include "arbolB.h"
 
 using std::cout;
 using std::cin;

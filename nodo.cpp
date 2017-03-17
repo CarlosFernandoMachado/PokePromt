@@ -1,4 +1,6 @@
 #include "nodo.h"
+#include "pagina.cpp"
+#include "arbolB.cpp"
 #include <string>
 #include <sstream>
 using std::string;

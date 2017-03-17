@@ -8,4 +8,5 @@ public:
 	arbolB(pagina);
 	void setroot(pagina);
 	pagina getroot();
+	string imprimir();
 };
