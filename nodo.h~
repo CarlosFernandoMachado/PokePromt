@@ -1,13 +1,13 @@
 #pragma once
 #include <string>
-#include "pagina.h"
+#include "pagina.cpp"
 using std::string;
 class nodo{
 	string path;
 	int key;
-	pagina* izq;
-	pagina* der;
-public:
+	pagina izq;
+	pagina der;
+  public:
 	nodo(string,int);
 	string getpath();
 	int getkey();

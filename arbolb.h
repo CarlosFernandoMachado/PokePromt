@@ -1,13 +1,16 @@
 #pragma once
 #include <string>
 #include "pagina.h"
+
 using std::string;
 
-class arbolB{
+class arbolb{
 	pagina root;
 public:
-	arbolB(pagina);
-	void setroot(pagina);
+	arbolb(pagina);
 	pagina getroot();
-	string imprimir();
+	void setroot(pagina);
+	string tostring();
+
+
 };

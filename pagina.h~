@@ -1,6 +1,6 @@
 #pragma once
-#include "nodo.h"
-#include "pagina.h"
+#include "nodo.cpp"
+#include "arbolB.cpp"
 class pagina{
 	nodo padreizq;
 	nodo padreder;

@@ -1,20 +1,26 @@
 #pragma once
+#include <string>
 #include "nodo.h"
-#include "arbolB.h"
+
+using std::string;
+
 class pagina{
-	nodo padreizq;
-	nodo padreder;
-	pagina padre;
+	pagina* padre;
+	pagina* hijoizq;
+	pagina* hijoder;
 	nodo arreglo[3];
 public:
-	pagina(nodo);
-	void agregar(nodo,bool,arbol&);
+	pagina(nodo,nodo*);
 	nodo get0();
 	nodo get1();
-	nodo getpadreizq();
-	nodo getpadreder();
-	void eliminar(int);
 	pagina getpadre();
-	void setpadre(pagina);
+	void setpadre(pagina*);
+	pagina gethijoizq();
+	pagina gethijoder();
+	void sethijoizq(pagina*);
+	void sethijoder(pagina*);
+	void agregar(pagina*,bool);
+	void eliminar(int);
 	string tostring();
+	
 };

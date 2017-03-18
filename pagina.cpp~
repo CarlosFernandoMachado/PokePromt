@@ -1,6 +1,6 @@
 #include "pagina.h"
-#include "nodo.cpp"
-#include "arbolB.cpp"
+#include "nodo.h"
+#include "arbolB.h"
 #include <string>
 #include <sstream>
 
@@ -79,6 +79,13 @@ nodo pagina::get1(){
 	return arreglo[1];
 }
 
+nodo getpadreizq(){
+	return padreizq;
+}
+nodo getpadreder(){
+	return padreder;
+}
+
 void pagina::eliminar(int key){
 
 }
@@ -89,6 +96,10 @@ pagina pagina::getpadre(){
 
 void pagina::setpadre(pagina newdad){
 	padre = newdad;
+	padreizq = newdad.getpadreizq();
+	if(newdad.get1() != null){
+		padreder = newdad.get1();
+	}
 }
 
 string tostring(){

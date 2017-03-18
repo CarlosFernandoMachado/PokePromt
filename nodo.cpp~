@@ -1,10 +1,14 @@
 #include "nodo.h"
+#include "pagina.h"
 #include <string>
 #include <sstream>
 using std::string;
 using std::stringstream;
 
-nodo::nodo(string camino,int valor):path(camino),key(valor){}
+nodo::nodo(string camino,int valor){
+	path = camino;
+	key = valor;
+}
 
 string nodo::getpath(){
 	return path;
