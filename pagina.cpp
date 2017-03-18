@@ -1,13 +1,24 @@
 #include "pagina.h"
 #include "nodo.h"
 #include <string>
+#include <sstream>
+#include <iostream>
 
+using std::cout;
+using std::stringstream;
 using std::string;
 
 pagina::pagina(nodo nuevo){
 	arreglo[0] = nuevo;
 	arreglo[1] = nodo();
 	arreglo[2] = nodo();
+	padre = NULL;
+	izq = NULL;
+	med = NULL;
+	der = NULL;
+	temp = NULL;
+}
+pagina::pagina(){
 	padre = NULL;
 	izq = NULL;
 	med = NULL;
@@ -50,15 +61,17 @@ pagina* pagina::getder(){
 void pagina::agregar(pagina nuevonodo ,bool validacion){
 	nodo nuevo = nuevonodo.get0();
 	if (nuevo.getkey() < arreglo[0].getkey() && izq != NULL &&validacion == true){
-		izq->agregar(nuevo,true);
+		izq->agregar(nuevonodo,true);
 	}else if (nuevo.getkey() > arreglo[0].getkey() && med != NULL && validacion == true && arreglo[1].getkey() == -1){
-		med->agregar(nuevo,true);
+		med->agregar(nuevonodo,true);
 	}else if(nuevo.getkey() > arreglo[1].getkey() && der != NULL && validacion == true){
-		der->agregar(nuevo,true);
+		der->agregar(nuevonodo,true);
+	}else if(nuevo.getkey() > arreglo[0].getkey() && nuevo.getkey() < arreglo[1].getkey() && med != NULL && validacion == true){
+		med->agregar(nuevonodo,true);
 	}else if(nuevo.getkey() > arreglo[0].getkey() && arreglo[1].getkey() == -1){
 		arreglo[1] = nuevo;
-		med = nuevonodo.getmed();
-		der = nuevonodo.getder();
+		med = nuevonodo.getizq();
+		der = nuevonodo.getmed();
 	}else if(nuevo.getkey() < arreglo[0].getkey() && arreglo[1].getkey() == -1){
 		arreglo[1] = arreglo[0];
 		arreglo[0] = nuevo;
@@ -115,9 +128,27 @@ void pagina::eliminar(int key){
 
 }
 string pagina::tostring(){
+	stringstream ss;
 	string temp = "";
 	for(int i = 0; i < 2; i++){
 		temp += arreglo[i].tostring();
+	}
+	if(izq != NULL){
+		ss << arreglo[0].getkey() << "\n";
+		temp += "Izquierda de: " + ss.str();
+		temp += izq->tostring();
+	}
+	ss.str("");
+	if(med != NULL){
+		ss << arreglo[0].getkey() << "\n";
+		temp += "Medio de: " + ss.str();
+		temp += med->tostring();
+	}
+	ss.str("");
+	if(der != NULL){
+		ss << arreglo[1].getkey() << "\n";
+		temp += "Derecha de: " + ss.str();
+		temp += der->tostring();
 	}
 	return temp;
 }

@@ -13,6 +13,7 @@ class pagina{
 	pagina* temp;
 public:
 	pagina(nodo);
+	pagina();
 	void setpadre(pagina*);
 	void setizq(pagina*);
 	void setmed(pagina*);

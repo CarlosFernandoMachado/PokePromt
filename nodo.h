@@ -11,6 +11,7 @@ public:
 	nodo();
 	string getpath();
 	int getkey();
+	void setpath(string);
 	void setkey(int);
 	string tostring();
 };

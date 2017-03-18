@@ -18,15 +18,14 @@ string nodo::getpath(){
 int nodo::getkey(){
 	return key;
 }
+void nodo::setpath(string nuevo){
+	path = nuevo;
+}
 void nodo::setkey(int valor){
 	key = valor;
 }
 string nodo::tostring(){
 	stringstream ss;
-	if (key != -1){
-		ss << "Key: " << key << " \n";
-	}else{
-		ss << "null \n";
-	}
+	ss << "Key: " << key << " \n";
 	return ss.str();
 }

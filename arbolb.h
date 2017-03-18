@@ -10,6 +10,9 @@ public:
 	arbolb(pagina);
 	pagina getroot();
 	void setroot(pagina);
+	void refresh();
+	void agregar(pagina,bool);
+	void eliminar(int);
 	string tostring();
 
 };
