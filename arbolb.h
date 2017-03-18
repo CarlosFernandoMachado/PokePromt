@@ -12,5 +12,4 @@ public:
 	void setroot(pagina);
 	string tostring();
 
-
 };

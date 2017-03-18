@@ -7,13 +7,12 @@ using std::cin;
 using std::endl;
 
 int main(int argc, char*argv[]){
-	nodo null("",-1);
-	cout << null.tostring();
-	//pagina Null(null,&null);
-	nodo primero("",1);
-	cout << primero.tostring();
-	pagina root(primero,&null);
-	cout << root.tostring();
+	nodo a("",1);
+	nodo b("",2);
+	pagina page2(b);
+	pagina page(a);
+	page.agregar(page2,true);
+	cout << page.tostring();
 	return 0;
 }
 

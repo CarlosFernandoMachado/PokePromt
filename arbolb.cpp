@@ -13,6 +13,6 @@ void arbolb::setroot(pagina newroot){
 	root = newroot;
 }
 string arbolb::tostring(){
-	string imprimir = "";
+	string imprimir = root.tostring();
 	return imprimir;
 }
